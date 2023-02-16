@@ -28,7 +28,7 @@ time_frame = "5"
 sl = 0.15
 
 #Take-profit
-tp = 0.4
+tp = 0.25
 
 #Pairs
 symbols = ["ETHUSDT"]
