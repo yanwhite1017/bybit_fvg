@@ -151,7 +151,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.45%: {stop_loss}\ntp: 0.45%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
@@ -177,7 +177,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.45%: {stop_loss}\ntp: 0.45%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
