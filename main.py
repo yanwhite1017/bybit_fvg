@@ -22,13 +22,13 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "5"
+time_frame = "15"
 
 # Stop-loss
-sl = 0.15
+sl = 0.45
 
 #Take-profit
-tp = 0.25
+tp = 0.45
 
 #Pairs
 symbols = ["ETHUSDT"]
@@ -151,7 +151,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {1} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
@@ -177,7 +177,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {1} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {15} {name_pair}\nОбнаружен {candle_value}\n sl 0.2%: {stop_loss}\ntp: 0.4%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
@@ -185,7 +185,7 @@ def handle_function(message):
 					print(f'Создан ордер | напр. Short: {order_short}')
 
 
-ws_perpetual.kline_stream(handle_function, symbols, "1")
+ws_perpetual.kline_stream(handle_function, symbols, time_frame)
 
 while True:
 	sleep(1)
