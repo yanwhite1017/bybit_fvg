@@ -22,16 +22,16 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "1"
+time_frame = "15"
 
 # Stop-loss
-sl = 0.45
+sl = 0.20
 
 #Take-profit
 tp = 0.45
 
 #Pairs
-symbols = ["ETHUSDT"]
+symbols = ["MATICUSDT", "SHIB1000USDT"]
 
 # Ключи API
 api_key = 'j83Gn95OgZoylzQTd2'
