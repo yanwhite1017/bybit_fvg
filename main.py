@@ -31,7 +31,7 @@ sl = 0.10
 tp = 0.40
 
 #Pairs
-symbols = ["MATICUSDT"]
+symbols = ["ETHUSDT"]
 
 # Ключи API
 api_key = 'j83Gn95OgZoylzQTd2'
