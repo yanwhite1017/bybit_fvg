@@ -22,16 +22,16 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "15"
+time_frame = "1"
 
 # Stop-loss
-sl = 0.20
+sl = 0.10
 
 #Take-profit
-tp = 0.45
+tp = 0.40
 
 #Pairs
-symbols = ["MATICUSDT", "SHIB1000USDT"]
+symbols = ["MATICUSDT"]
 
 # Ключи API
 api_key = 'j83Gn95OgZoylzQTd2'
@@ -161,7 +161,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {15} {name_pair}\n\nОбнаружен: {candle_value}\n sl 0.45%: {stop_loss}\ntp: 0.45%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🟢 Long FVG {15} {name_pair}\n\nОбнаружен: {candle_value}\n sl 0.10%: {stop_loss}\ntp: 0.40%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
@@ -190,7 +190,7 @@ def handle_function(message):
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {15} {name_pair}\n\nОбнаружен: {candle_value}\n sl 0.45%: {stop_loss}\ntp: 0.45%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🔴 Short FVG {15} {name_pair}\n\nОбнаружен: {candle_value}\n sl 0.40%: {stop_loss}\ntp: 0.10%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
