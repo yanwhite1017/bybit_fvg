@@ -31,7 +31,7 @@ sl = 0.20
 tp = 0.20
 
 #Pairs
-symbols = ["ETHUSDT"]
+symbols = ["MATICUSDT"]
 
 # Ключи API
 api_key = 'j83Gn95OgZoylzQTd2'
@@ -66,7 +66,7 @@ telegram_bot = telebot.TeleBot('5250317638:AAEW3a0SALVDEeF_0UWuD9t89GUaEmTVwho')
 #------------------------------------------------------------------------------------
 
 
-set_of = {'symbols': {'ETHUSDT': {'set_of_klines': [None, None], 'orders': {'type': None}, 'open_position': False}}}
+set_of = {'symbols': {'MATICUSDT': {'set_of_klines': [None, None], 'orders': {'type': None}, 'open_position': False}}}
 
 def toFixed(numObj, digits=0):
 	return f"{numObj:.{digits}f}"
