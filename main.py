@@ -22,13 +22,13 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "5"
+time_frame = "15"
 
 # Stop-loss
-sl = 0.20
+sl = 0.10
 
 #Take-profit
-tp = 0.20
+tp = 0.40
 
 #Pairs
 symbols = ["BTCUSDT"]
