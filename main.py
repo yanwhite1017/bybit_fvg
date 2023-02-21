@@ -66,7 +66,7 @@ telegram_bot = telebot.TeleBot('5250317638:AAEW3a0SALVDEeF_0UWuD9t89GUaEmTVwho')
 #------------------------------------------------------------------------------------
 
 
-set_of = {'symbols': {'MATICUSDT': {'set_of_klines': [None, None], 'orders': {'type': None}, 'open_position': False}}}
+set_of = {'symbols': {'BTCUSDT': {'set_of_klines': [None, None], 'orders': {'type': None}, 'open_position': False}}}
 
 def toFixed(numObj, digits=2):
 	return f"{numObj:.{digits}f}"
