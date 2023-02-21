@@ -22,7 +22,7 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "5"
+time_frame = "1"
 
 # Stop-loss
 sl = 0.10
