@@ -145,7 +145,7 @@ def handle_function(message):
 				# Запрос на создание ордера
 				if set_of['symbols'][name_pair]['open_position'] == False:
 					re_sl = float(toFixed(numObj=stop_loss, digits=3))
-					re_tp = float(toFixed(numObj=stop_loss, digits=3))
+					re_tp = float(toFixed(numObj=take_profit, digits=3))
 					order_long = control.make_order(url="https://api-testnet.bybit.com",
 													api=api_key,
 													secret=api_secret,
