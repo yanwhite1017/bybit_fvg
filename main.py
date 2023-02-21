@@ -31,7 +31,7 @@ sl = 0.20
 tp = 0.20
 
 #Pairs
-symbols = ["MATICUSDT"]
+symbols = ["BTCUSDT"]
 
 # Ключи API
 api_key = 'j83Gn95OgZoylzQTd2'
@@ -68,7 +68,7 @@ telegram_bot = telebot.TeleBot('5250317638:AAEW3a0SALVDEeF_0UWuD9t89GUaEmTVwho')
 
 set_of = {'symbols': {'MATICUSDT': {'set_of_klines': [None, None], 'orders': {'type': None}, 'open_position': False}}}
 
-def toFixed(numObj, digits=0):
+def toFixed(numObj, digits=2):
 	return f"{numObj:.{digits}f}"
 
 try:
@@ -129,6 +129,8 @@ def handle_function(message):
 		if new_signal['fvg'] == True:
 			if name_pair == 'ETHUSDT':
 				qValue = 0.25
+			if name_pair == 'BTCUSDT':
+				qValue = 0.02
 
 			candle_value = float(data_candle[0]["close"])
 
@@ -142,16 +144,18 @@ def handle_function(message):
 
 				# Запрос на создание ордера
 				if set_of['symbols'][name_pair]['open_position'] == False:
+					re_sl = float(toFixed(numObj=stop_loss))
+					re_tp = float(toFixed(numObj=stop_loss))
 					order_long = control.make_order(url="https://api-testnet.bybit.com",
 													api=api_key,
 													secret=api_secret,
 													side="Buy",
-													stop_loss=stop_loss,
-													take_profit=take_profit,
+													stop_loss=re_sl,
+													take_profit=re_tp,
 													symbol=name_pair,
 													qty=qValue)
 					try:
-						telegram_bot.send_message('-1001550657696', f'🟢 Short FVG {time_frame} {name_pair}\n\nОбнаружен: {candle_value}\n sl {sl}%: {stop_loss}\n tp: {tp}%: {take_profit}')
+						telegram_bot.send_message('-1001550657696', f'🟢 Long FVG {time_frame} {name_pair}\n\nОбнаружен: {candle_value}\n sl {sl}%: {stop_loss}\n tp: {tp}%: {take_profit}')
 					except Exception as exc:
 						print(exc)
 					
@@ -165,15 +169,17 @@ def handle_function(message):
 				stop_loss = candle_value + candle_value/100*sl
 				# Take Profit
 				take_profit = candle_value - candle_value/100*tp
-
+				
 				# Запрос на создание ордера
 				if set_of['symbols'][name_pair]['open_position'] == False:
+					re_sl = float(toFixed(numObj=stop_loss))
+					re_tp = float(toFixed(numObj=take_profit))
 					order_short = control.make_order(url="https://api-testnet.bybit.com",
 													api=api_key,
 													secret=api_secret,
 													side="Sell",
-													stop_loss=stop_loss,
-													take_profit=take_profit,
+													stop_loss=re_sl,
+													take_profit=re_tp,
 													symbol=name_pair,
 													qty=qValue)
 					try:
