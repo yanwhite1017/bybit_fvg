@@ -22,13 +22,13 @@ logging.basicConfig(filename="pybit.log", level=logging.DEBUG,
 leverage = 20
 
 # Timeframe
-time_frame = "15"
+time_frame = "5"
 
 # Stop-loss
-sl = 0.50
+sl = 0.10
 
 #Take-profit
-tp = 0.50
+tp = 0.30
 
 #Pairs
 symbols = ["ETCUSDT"]
