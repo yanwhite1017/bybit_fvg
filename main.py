@@ -127,8 +127,8 @@ def handle_function(message):
 		print(fvg)
 
 		if new_signal['fvg'] == True:
-			if name_pair == 'ETHUSDT':
-				qValue = 0.25
+			if name_pair == 'ETCUSDT':
+				qValue = 10
 			if name_pair == 'BTCUSDT':
 				qValue = 0.02
 
@@ -144,8 +144,8 @@ def handle_function(message):
 
 				# Запрос на создание ордера
 				if set_of['symbols'][name_pair]['open_position'] == False:
-					re_sl = float(toFixed(numObj=stop_loss))
-					re_tp = float(toFixed(numObj=stop_loss))
+					re_sl = float(toFixed(numObj=stop_loss, digits=3))
+					re_tp = float(toFixed(numObj=stop_loss, digits=3))
 					order_long = control.make_order(url="https://api-testnet.bybit.com",
 													api=api_key,
 													secret=api_secret,
@@ -172,8 +172,8 @@ def handle_function(message):
 				
 				# Запрос на создание ордера
 				if set_of['symbols'][name_pair]['open_position'] == False:
-					re_sl = float(toFixed(numObj=stop_loss))
-					re_tp = float(toFixed(numObj=take_profit))
+					re_sl = float(toFixed(numObj=stop_loss, digits=3))
+					re_tp = float(toFixed(numObj=take_profit, digits=3))
 					order_short = control.make_order(url="https://api-testnet.bybit.com",
 													api=api_key,
 													secret=api_secret,
