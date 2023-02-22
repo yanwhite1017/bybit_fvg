@@ -25,10 +25,10 @@ leverage = 20
 time_frame = "15"
 
 # Stop-loss
-sl = 0.9
+sl = 0.3
 
 #Take-profit
-tp = 0.30
+tp = 0.9
 
 #Pairs
 symbols = ["ETCUSDT"]
